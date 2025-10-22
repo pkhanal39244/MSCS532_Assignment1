@@ -1,0 +1,79 @@
+# ===============================================================
+# Assignment 1: Getting Started with Python and Insertion Sort
+# Course: MSCS 532
+# Student: PK
+# Date: 10/22/2025
+# ===============================================================
+
+# ---------------------------------------------------------------
+# Introduction:
+# This Python script demonstrates the Insertion Sort algorithm,
+# modified to sort an array in MONOTONICALLY DECREASING ORDER.
+# The algorithm is based on the explanation in Chapter 2 of
+# "Introduction to Algorithms" by Cormen et al. (2022).
+# ---------------------------------------------------------------
+
+# ---------------------------------------------------------------
+# Function: insertion_sort_descending()
+# Purpose: Sorts a list in decreasing order using insertion sort.
+# ---------------------------------------------------------------
+def insertion_sort_descending(arr):
+    """
+    Perform an insertion sort on the list 'arr' in decreasing order.
+
+    Parameters:
+        arr (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The same list sorted in decreasing order.
+    """
+    # The algorithm assumes the first element is sorted
+    for i in range(1, len(arr)):
+        # The key is the current element to be compared
+        key = arr[i]
+        # Initialize the previous index
+        j = i - 1
+
+        # Compare with each element in the sorted portion of the list.
+        # Instead of ascending (arr[j] > key), we reverse the condition
+        # to create a monotonically decreasing order.
+        while j >= 0 and arr[j] < key:
+            arr[j + 1] = arr[j]  # Shift elements right
+            j -= 1               # Move the pointer one step left
+
+        # Place the key in its correct position
+        arr[j + 1] = key
+
+    return arr
+
+
+# ---------------------------------------------------------------
+# Function: main()
+# Purpose: Entry point of the program. Handles input/output.
+# ---------------------------------------------------------------
+def main():
+    print("===========================================")
+    print("   INSERTION SORT - DECREASING ORDER DEMO  ")
+    print("===========================================\n")
+
+    # Example list to demonstrate the algorithm
+    data = [12, 4, 56, 17, 8, 99, 23, 45]
+
+    print("Original List:")
+    print(data)
+
+    # Perform sorting using our function
+    sorted_data = insertion_sort_descending(data)
+
+    print("\nSorted List (Monotonically Decreasing Order):")
+    print(sorted_data)
+
+    print("\nProgram completed successfully!")
+
+
+# ---------------------------------------------------------------
+# Conditional to run the main function
+# This ensures that the code only executes when run directly.
+# ---------------------------------------------------------------
+if __name__ == "__main__":
+    main()
