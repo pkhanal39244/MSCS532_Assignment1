@@ -1,1 +1,3 @@
 # MSCS532_Assignment1
+
+This project is part of MSCS 532 Assignment 1: Getting Started, where the goal is to set up a Python development environment, configure Visual Studio Code (VS Code), and practice version control using GitHub. The main task is to implement the Insertion Sort algorithm in Python, modified to sort an array in monotonically decreasing order. The program demonstrates fundamental algorithm design and control flow concepts. It includes descriptive comments, clear function structure, and sample data for testing. This assignment also emphasizes GitHub usage by requiring multiple commits to document the development process and ensure collaborative version control proficiency.
